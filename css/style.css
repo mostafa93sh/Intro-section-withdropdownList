@@ -1,0 +1,306 @@
+:root{
+    --almost-white:hsl(0, 0%, 98%);
+    --medium-gray:hsl(0, 0%, 41%);
+    --almost-black:hsl(0, 0%, 8%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Epilogue', sans-serif;
+}
+body{
+    background-color: var(--almost-white);
+    
+}
+p{
+    font-size: 18px;
+}
+
+/*///////////////////////Desktop View///////////////////////////////////////*/
+/*///////////////////////Desktop View///////////////////////////////////////*/
+/*///////////////////////Desktop View///////////////////////////////////////*/
+.hidden-navbar{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: end;
+    display: none;
+}
+.hidden-navbar .hidden-list{
+
+    background-color: var(--almost-white);
+    flex-basis: 35%;
+    padding-top: 50px;
+    /* padding-left: 25px; */
+    display: flex;
+    flex-direction: column;
+    
+}
+.hidden-navbar .hidden-list .close-icon{
+    background-image: url('../images/icon-close-menu.svg');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+}
+.hidden-navbar .hidden-list button{
+    background-color: transparent;
+    color: var(--medium-gray);
+    font-size: 0.92rem;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+.hidden-navbar .hidden-list button:last-of-type{
+    border: 1px solid var(--almost-black);
+    border-radius: 12px;
+    padding: 10px 17px ;
+    width: 75%;
+}
+
+.hidden-navbar ul{
+    list-style: none;
+    
+
+   
+   
+   
+}
+.hidden-navbar ul li{
+    padding: 10px;
+    color: var(--medium-gray);
+    position: relative;
+}
+.hidden-navbar ul li:nth-child(1)::after{
+    content: url("../images/icon-arrow-down.svg");
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    height: 5px;
+    width: 5px;
+}
+.hidden-navbar ul li:nth-child(2)::after{
+    content: url("../images/icon-arrow-down.svg");
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    height: 5px;
+    width: 5px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+nav .left-side{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+nav .left-side .icon{
+    width: 50px;
+    height: 50px;
+    /* align-self: center; */
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:50px ;
+    background-position: 0 50%;
+}
+nav .left-side .icon img{
+    max-width: 100%;
+}
+
+nav .left-side .menu-list ul{
+    list-style: none;
+    display: flex;
+    margin-left: 50px;
+}
+
+nav .left-side .menu-list ul li{
+    padding:0 20px;
+    color: var(--medium-gray);
+    position: relative;
+}
+nav .left-side .menu-list ul li:hover{
+    cursor: pointer;
+    color: var(--almost-black);
+}
+nav .left-side .menu-list ul li:first-child::after{
+   content: url('../images/icon-arrow-down.svg');
+   position: absolute;
+   height: 4px;
+   width: 4px;
+   right: 8px;
+   top: 0;
+   
+}
+nav .left-side .menu-list ul li:nth-child(2)::after{
+   content: url('../images/icon-arrow-down.svg');
+   position: absolute;
+   height: 4px;
+   width: 4px;
+   right: 8px;
+   top: 0;
+   
+}
+@media(max-width:767px){
+       nav .left-side .menu-list ul {
+        display: none;
+       }
+
+}
+
+nav .right-side{
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav .right-side .login,
+nav .right-side .register{
+    background-color: transparent;
+    border: none;
+    color: var(--medium-gray);
+    font-size: 0.97rem;
+    padding:5px 20px  ;
+    height: auto;
+}
+nav .right-side .register{
+    border: 1px solid var(--almost-black);
+    border-radius: 10px;
+}
+
+@media(max-width:767px){
+    
+    nav .right-side{
+        display: block;
+        position: relative;
+        background-image: url('../images/icon-menu.svg');
+        background-repeat: no-repeat;
+        background-size:50%
+    }nav .right-side .login,
+    nav .right-side .register{
+        display: none;
+    }
+}
+.page-content {
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+    margin-top: 50px;
+    
+}
+@media(max-width:767px){
+    .page-content{
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        
+        height: 100vh;
+    }
+}
+.page-content .left-part{
+    flex-basis: 45%;
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 32px;
+}
+.page-content .left-part h1{
+    font-size:4em;
+}
+.page-content .left-part h1 span{
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.2em;
+}
+@media(max-width:767px){
+    .page-content .left-part{
+        align-items: center;
+    }
+
+    .page-content .left-part h1{
+        font-size:2.4em;
+    }
+    .page-content .left-part h1 span{
+        display: inline;
+        text-transform: capitalize;
+        font-size: 1.1em;
+    }
+}
+.page-content .left-part p{
+    font-size: 0.88rem;
+    color: var(--medium-gray);
+    line-height: 1.7;
+    margin-right: 230px;
+}
+@media(max-width:767px){
+    .page-content .left-part p{
+        text-align: center;
+        margin: 10px 55px;
+        line-height: 1.3;
+        font-size: 1.09rem;
+    } 
+}
+.page-content .left-part button{
+    background-color: var(--almost-black);
+    color: var(--almost-white);
+    width: 40%;
+    padding: 17px 15px;
+    border-radius: 10px;
+    font-size: 1.11rem;
+    letter-spacing: 1.2;
+}
+.page-content .left-part button:hover{
+    cursor: pointer;
+}
+@media(max-width:767px){
+
+}
+.page-content .right-part{
+    flex-basis: 45%;
+    height: 100%;
+    background-image: url(../images/image-hero-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+@media(max-width:767px){
+    .page-content .right-part{
+        background-image: url(../images/image-hero-mobile.png);
+        
+       
+      
+    }
+}
+
+/* .page-content .left-part .icon-collection{
+    
+} */
+.page-content .left-part .icon-collection ul{
+    list-style: none;
+    display: flex;
+
+}
+.page-content .left-part .icon-collection ul li{
+    padding: 0 15px;
+
+}
+.page-content .left-part .icon-collection ul li img{
+    max-width: 100%;
+}
+/* ///////////////////////Mobile View ////////////////////////////////////// */
+/* ///////////////////////Mobile View ////////////////////////////////////// */
+/* ///////////////////////Mobile View ////////////////////////////////////// */
+/* @media(max-width:375px){
+
+} */
