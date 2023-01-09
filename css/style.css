@@ -119,13 +119,13 @@ nav .left-side .icon img{
     max-width: 100%;
 }
 
-nav .left-side .menu-list ul{
+nav .left-side .menu-list .main-menu-list{
     list-style: none;
     display: flex;
     margin-left: 50px;
 }
 
-nav .left-side .menu-list ul li{
+nav .left-side .menu-list .main-menu-list>li{
     padding:0 20px;
     color: var(--medium-gray);
     position: relative;
@@ -134,7 +134,88 @@ nav .left-side .menu-list ul li:hover{
     cursor: pointer;
     color: var(--almost-black);
 }
-nav .left-side .menu-list ul li:first-child::after{
+ 
+nav .left-side .menu-list .main-menu-list .company .dropdown-list {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    height: 150px;
+    width: 120px;
+    background-color: var(--almost-white);
+    box-shadow: 1px 1px 25px var(--medium-gray);
+    border-radius: 14px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 0.88rem;
+    display: none;
+}
+nav .left-side .menu-list ul .feature .dropdown-list {
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    height: 200px;
+    width: 170px;
+    background-color: var(--almost-white);
+    box-shadow: 1px 1px 25px var(--medium-gray);
+    border-radius: 14px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 0.88rem;
+    display: none;
+}
+
+nav .left-side .menu-list ul .company:hover .dropdown-list,
+nav .left-side .menu-list ul .feature:hover .dropdown-list{
+    display: flex;
+}
+nav .left-side .menu-list ul .feature .dropdown-list li{
+    color: var(--almost-black);
+    margin-top: 10px;
+    margin-right: 0;
+    position: relative;
+
+}
+nav .left-side .menu-list ul .feature .dropdown-list .todo-list::after{
+    content: url('../images/icon-todo.svg');
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+nav .left-side .menu-list ul .feature .dropdown-list .calender::after{
+    content: url('../images/icon-calendar.svg');
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+nav .left-side .menu-list ul .feature .dropdown-list .reminder::after{
+    content: url('../images/icon-reminders.svg');
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+nav .left-side .menu-list ul .feature .dropdown-list .planning::after{
+    content: url('../images/icon-planning.svg');
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+nav .left-side .menu-list .main-menu-list .feature::after{
    content: url('../images/icon-arrow-down.svg');
    position: absolute;
    height: 4px;
@@ -143,7 +224,7 @@ nav .left-side .menu-list ul li:first-child::after{
    top: 0;
    
 }
-nav .left-side .menu-list ul li:nth-child(2)::after{
+nav .left-side .menu-list .main-menu-list .company::after{
    content: url('../images/icon-arrow-down.svg');
    position: absolute;
    height: 4px;
@@ -153,7 +234,7 @@ nav .left-side .menu-list ul li:nth-child(2)::after{
    
 }
 @media(max-width:767px){
-       nav .left-side .menu-list ul {
+       nav .left-side .menu-list .main-menu-list {
         display: none;
        }
 
